@@ -1,21 +1,21 @@
 package com.exam.test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import com.exam.Order;
 import com.exam.OrderItem;
 import com.exam.util.OrderItemBuilder;
 
-class OrderTest {
+public class OrderTest {
 
 	@Test
-	void testSort() {
+	public void testSort() {
 		List<OrderItem> itemList = OrderItemBuilder.buildOrderItems();
 		OrderItem[] items = itemList.toArray(new OrderItem[itemList.size()]);
 		
@@ -33,11 +33,11 @@ class OrderTest {
 			System.out.println(item.getName());
 		}
 		
-		assertTrue(items.length > 0);
+		Assert.assertTrue(items.length > 0);
 	}
 	
 	@Test
-	void testOrderTotal() {
+	public void testOrderTotal() {
 		List<OrderItem> itemList = OrderItemBuilder.buildOrderItems();
 		OrderItem[] items = itemList.toArray(new OrderItem[itemList.size()]);
 		
@@ -53,7 +53,7 @@ class OrderTest {
 		
 		System.out.println("Total: $" + total);
 		
-		assertTrue(total > 0f);
+		Assert.assertTrue(total > 0f);
 	}
 
 }
